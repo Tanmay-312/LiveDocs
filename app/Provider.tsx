@@ -1,6 +1,6 @@
 'use client';
 
-import { useUser } from '@clerk/clerk-react';
+import { useUser } from '@clerk/nextjs';
 import {
     ClientSideSuspense,
     LiveblocksProvider,

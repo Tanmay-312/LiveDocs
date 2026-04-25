@@ -1,6 +1,6 @@
 'use client';
 
-import { SignedIn, UserButton } from '@clerk/nextjs';
+import { Show, UserButton } from '@clerk/nextjs';
 import { RoomProvider, ClientSideSuspense } from '@liveblocks/react/suspense';
 import Image from 'next/image';
 import { SetStateAction, KeyboardEvent, useEffect, useRef, useState } from 'react';
@@ -129,9 +129,9 @@ export function CollaborativeRoom({
                                 creatorId={roomMetadata.creatorId}
                                 currentUserType={currentUserType}
                             />
-                            <SignedIn>
+                            <Show when="signed-in">
                                 <UserButton />
-                            </SignedIn>
+                            </Show>
                         </div>
                     </Header>
         

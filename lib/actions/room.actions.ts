@@ -53,7 +53,7 @@ export const getDocument = async ({
         const room = await liveblocks.getRoom(roomId);
         
         // Check if the user has access to the document's room
-        const hasAccess = Object.keys(room.usersAccesses).includes(userId);
+        const hasAccess = Object.keys(room.usersAccesses || {}).includes(userId);
         
         if (!hasAccess) {
             throw new Error('You do not have access to this document.');

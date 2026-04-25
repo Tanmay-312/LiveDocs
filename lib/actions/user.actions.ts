@@ -1,20 +1,17 @@
 'use server';
 
-import { createClerkClient } from '@clerk/clerk-sdk-node';
+import { clerkClient } from '@clerk/nextjs/server';
 
 import { liveblocks } from '@/lib/liveblocks';
 
 import { parseStringify } from '../utils';
 
-const clerkClient = createClerkClient({
-    secretKey: process.env.CLERK_SECRET_KEY as string,
-});
-
 // Get Clerk Users
 export const getClerkUsers = async ({ userIds }: { userIds: string[] }) => {
     try {
         // https://clerk.com/docs/references/backend/user/get-user-list#filter-by-email-addresses-and-phone-numbers
-        const { data } = await clerkClient.users.getUserList({
+        const client = await clerkClient();
+        const { data } = await client.users.getUserList({
             emailAddress: userIds,
         });
         

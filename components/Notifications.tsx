@@ -7,7 +7,7 @@ import {
 import {
     InboxNotification,
     InboxNotificationList,
-    LiveblocksUIConfig,
+    LiveblocksUiConfig,
 } from "@liveblocks/react-ui";
 import Image from "next/image";
 import { ReactNode } from "react";
@@ -40,7 +40,7 @@ export const Notifications = () => {
                 )}
             </PopoverTrigger>
             <PopoverContent align="end" className="shad-popover">
-                <LiveblocksUIConfig
+                <LiveblocksUiConfig
                     overrides={{
                         INBOX_NOTIFICATION_TEXT_MENTION: (user: ReactNode) => {
                             return <>{user} mentioned you</>;
@@ -104,7 +104,7 @@ export const Notifications = () => {
                             />
                         ))}
                     </InboxNotificationList>
-                </LiveblocksUIConfig>
+                </LiveblocksUiConfig>
             </PopoverContent>
         </Popover>
         );

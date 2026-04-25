@@ -1,6 +1,6 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
+@import "tw-animate-css";
+@config "../tailwind.config.ts";
 
 @import "@liveblocks/react-ui/styles.css";
 @import "@liveblocks/react-lexical/styles.css";
@@ -14,25 +14,25 @@
     color: #fff;
     margin: 0;
   }
+}
 
-  .custom-scrollbar::-webkit-scrollbar {
-    width: 4px;
-    height: 4px;
-    border-radius: 50px;
-  }
+.custom-scrollbar::-webkit-scrollbar {
+  width: 4px;
+  height: 4px;
+  border-radius: 50px;
+}
 
-  .custom-scrollbar::-webkit-scrollbar-track {
-    background: #09090a;
-  }
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: #09090a;
+}
 
-  .custom-scrollbar::-webkit-scrollbar-thumb {
-    background: #2e3d5b;
-    border-radius: 50px;
-  }
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background: #2e3d5b;
+  border-radius: 50px;
+}
 
-  .custom-scrollbar::-webkit-scrollbar-thumb:hover {
-    background: #7878a3;
-  }
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: #7878a3;
 }
 
 @layer utilities {
@@ -51,15 +51,15 @@
   }
 
   .shad-dialog {
-    @apply w-full max-w-[400px] rounded-xl border-none bg-doc bg-cover px-5 py-7 shadow-xl sm:min-w-[500px] !important;
+    @apply !w-full !max-w-[400px] !rounded-xl !border-none !bg-doc !bg-cover !px-5 !py-7 !shadow-xl sm:!min-w-[500px];
   }
 
   .shad-dialog button {
-    @apply focus:ring-0 focus:ring-offset-0 focus-visible:border-none focus-visible:outline-none focus-visible:ring-transparent focus-visible:ring-offset-0 !important;
+    @apply focus:!ring-0 focus:!ring-offset-0 focus-visible:!border-none focus-visible:!outline-none focus-visible:!ring-transparent focus-visible:!ring-offset-0;
   }
 
   .shad-select {
-    @apply w-fit border-none bg-transparent text-blue-100 !important;
+    @apply !w-fit !border-none !bg-transparent !text-blue-100;
   }
 
   .shad-select svg {
@@ -67,11 +67,11 @@
   }
 
   .shad-select-item {
-    @apply cursor-pointer bg-dark-200 text-blue-100 focus:bg-dark-300 hover:bg-dark-300 focus:text-blue-100 !important;
+    @apply !cursor-pointer !bg-dark-200 !text-blue-100 focus:!bg-dark-300 hover:!bg-dark-300 focus:!text-blue-100;
   }
 
   .shad-popover {
-    @apply w-[460px] border-none bg-dark-200 shadow-lg !important;
+    @apply !w-[460px] !border-none !bg-dark-200 !shadow-lg;
   }
 
   .floating-toolbar {
@@ -83,11 +83,11 @@
   }
 
   .toolbar-wrapper {
-    @apply z-50 custom-scrollbar w-screen overflow-auto border-y border-dark-300 bg-dark-100 pl-3 pr-4 shadow-sm;
+    @apply z-50 w-screen overflow-auto border-y border-dark-300 bg-dark-100 pl-3 pr-4 shadow-sm;
   }
 
   .editor-wrapper {
-    @apply custom-scrollbar h-[calc(100vh-140px)] gap-5 overflow-auto px-5 pt-5 lg:flex-row lg:items-start lg:justify-center  xl:gap-10 xl:pt-10;
+    @apply h-[calc(100vh-140px)] gap-5 overflow-auto px-5 pt-5 lg:flex-row lg:items-start lg:justify-center  xl:gap-10 xl:pt-10;
   }
 
   .header {
@@ -111,7 +111,7 @@
   }
 
   .document-title-input {
-    @apply min-w-[78px] border-none bg-transparent px-0 text-left text-base font-semibold leading-[24px] focus-visible:ring-0 focus-visible:ring-offset-0 disabled:text-black sm:text-xl md:text-center !important;
+    @apply !min-w-[78px] !border-none !bg-transparent !px-0 !text-left !text-base !font-semibold !leading-[24px] focus-visible:!ring-0 focus-visible:!ring-offset-0 disabled:!text-black sm:!text-xl md:!text-center;
   }
 
   .document-title {
@@ -127,7 +127,7 @@
   }
 
   .share-input {
-    @apply h-11 flex-1 border-none bg-dark-400 focus-visible:ring-0 focus-visible:ring-offset-0 !important;
+    @apply !h-11 !flex-1 !border-none !bg-dark-400 focus-visible:!ring-0 focus-visible:!ring-offset-0;
   }
 
   .remove-btn {

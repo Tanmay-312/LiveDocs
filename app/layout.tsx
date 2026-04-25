@@ -27,22 +27,23 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <ClerkProvider
-      appearance={{
-        baseTheme: dark,
-        variables: { colorPrimary: '#3371FF', fontSize: '16px' },
-      }}
-    >
-      <html lang="en">
-        <body
-          className={cn(
-            'min-h-screen font-sans antialiased',
-            fontSans.variable,
-          )}
+    <html lang="en">
+      <body
+        className={cn(
+          'min-h-screen font-sans antialiased',
+          fontSans.variable,
+        )}
+      >
+        <ClerkProvider
+          appearance={{
+            baseTheme: dark,
+            variables: { colorPrimary: '#3371FF', fontSize: '16px' },
+          }}
+          dynamic
         >
-        <Provider>{children}</Provider>
-        </body>
-      </html>
-    </ClerkProvider>
+          <Provider>{children}</Provider>
+        </ClerkProvider>
+      </body>
+    </html>
   );
 }
